@@ -8,7 +8,6 @@ import json
 import threading
 import time
 
-
 NextVersionIdMarker = None
 NextKeyMarker = None
 Repeat = True
