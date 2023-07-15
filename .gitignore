@@ -1,2 +1,4 @@
 execution.out
 venv/*
+*.html
+.DS_Store
