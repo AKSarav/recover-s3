@@ -1,12 +1,21 @@
-## Recover S3
+## Recover S3 :recycle:
 
-This script will recover files (objects) from Versioned S3 Buckets that have been soft deleted by
-removing their respective `deletemarker` 
+RecoverS3 is designed to recover files (objects) from Versioned S3 Buckets that have been soft deleted (Delete Marker) 
 
-To understand how RecoverS3 works,  you need to understand what is `deletemarker` 
+RecoverS3 is a command line tool that can be used to recover files from S3 buckets that have versioning enabled
 
+It tracks the delete markers in the given S3 bucket matching the `prefix` ( directory structure) and perform the recovery
 
-### What is S3 deletemarker and how it works
+This tool is built with Python 3 and Boto3 and it is built with concurrency to speed up the recovery process
+
+RecoverS3 also has a beautiful reporting feature that generates a HTML report designed with `Bootstrap`, `datatable` and `Jquery` to make your report searchable, sortable and easy to find every single file that you are looking for
+
+![RecoverS3](recovers3.png)
+
+Before we get into the details of how RecoverS3 works, let's understand how S3 versioning works and how `deletemarker` works
+
+&nbsp;
+### What is S3 deletemarker and how it works :bulb:
 
 
 In Amazon S3 (Simple Storage Service), a "DeleteMarker" is a unique object that represents the deletion of a versioned object in a bucket. When versioning is enabled for an S3 bucket, each object uploaded to the bucket will have multiple versions, and when you delete an object, S3 doesn't remove it immediately. Instead, it inserts a `DeleteMarker` as the latest version of the object to indicate that the object has been deleted.
@@ -27,8 +36,8 @@ Here's how DeleteMarkers work in S3:
 
 DeleteMarkers are essential for keeping track of the version history of objects in versioned S3 buckets. They provide a way to understand when and which versions of an object were deleted, allowing for more precise control over the data stored in the bucket.
 
-
-### How RecoverS3 deal with DeleteMarker
+&nbsp;
+### How RecoverS3 deal with DeleteMarker :thinking:
 
 As you have read and understood how `Deletion` and `DeleteMarker` and `Version Control` works on S3 bucket with Versioning enabled
 
@@ -49,7 +58,7 @@ All other recoverables files are kept under `Recoverable` table
 You can use the `-dryrun` option to generate a detailed report on what can be recovered and what cannot be , before proceeding with the actual recovery
 
 &nbsp;
-### Performance
+### Performance :rocket:
 
 recoverS3 is built with threading model to speed up the process. As part of benchmarking, we have recovered 10000 files in 8 minutes.
 
@@ -57,7 +66,7 @@ The speed of the script depends on the number of files that you are trying to re
 
 &nbsp;
 
-### Searchable, Sortable Data report
+### :sparkles: Searchable, Sortable Data report :sparkles:
 
 We have added a beautiful reporting feature into RecoverS3 and it generates a HTML report with `Bootstrap`, `datatable` and `Jquery` to make your report searchable, sortable and easy to find what you are looking for
 
@@ -73,7 +82,7 @@ The report contains the following fields
 
 &nbsp;
 
-### Pre-requisites
+### Pre-requisites :heavy_check_mark:
 
 * Python 3
 * Boto3
@@ -83,7 +92,7 @@ The report contains the following fields
 
 &nbsp;
 
-### Installation
+### Installation :computer:
 
 Clone the repository and install the dependencies.
 
@@ -94,7 +103,7 @@ $ pip install -r requirements.txt
 
 
 &nbsp;
-#### Usage
+#### Usage :wrench:
 
 ```
 python recover-s3-files.py [-h] --bucket BUCKET --prefix PREFIX --region
@@ -108,7 +117,7 @@ optional arguments:
 ```
 &nbsp;
 
-#### Example
+#### Examples :bulb:
 
 - `For dry run` - This will list the files that will be recovered and creates a HTML report named report.html
 
@@ -124,10 +133,25 @@ python recover-s3-files.py --bucket my-bucket --prefix my-prefix --region us-eas
 ```
 &nbsp;
 
-#### Author
+#### Author :bust_in_silhouette:
+
 Sarav Thangaraj - [linkedin](https://linkedin.com/in/aksarav) | [Blog](https://devopsjunction.com)
 
 &nbsp;
     
-#### License
+#### License :page_facing_up:
 MIT
+
+&nbsp;
+#### Further Reading :book:
+
+If you have any question please visit my blog post on [Recover S3](https://devopsjunction.com/recover-s3/)
+
+&nbsp;
+#### Contributions are welcome :pray:
+
+If you find any issues or want to contribute, please create a pull request or raise an issue
+
+&nbsp;
+
+#### Please star the repo if you find it useful :star: :star: :star: :star: :star:
