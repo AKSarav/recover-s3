@@ -261,7 +261,7 @@ if __name__ == '__main__':
             margin-bottom: -1%;
             margin-top: 3%;
             background-color: aliceblue;
-            color: rgba(0, 0, 0, 0.37) !important;
+            color: black;
         }
         .footer__right{
             margin-left: 30%;
@@ -281,7 +281,7 @@ if __name__ == '__main__':
                 <div class="col info">
                         <p><img src='https://img.icons8.com/windows/42/github' />https://github.com/aksarav/recovers3.git</p>
                         <!-- website link with icon -->
-                        <p><img src='https://img.icons8.com/windows/42/web'/>https://aksarav.github.io/recovers3/</p>
+                        <p><img src='https://img.icons8.com/windows/42/web'/>https://devopsjunction.com/recover-s3</p>
                 </div>
             </div>
                 ''')
@@ -319,7 +319,7 @@ if __name__ == '__main__':
                         <div class="footer">
                             <div class="footer__right">
                                 <div class="footer__right__text">
-                                    <p> For further reference visit <a href="https://www.recoverS3.com">devopsjunction.com/recovers3</a></p>
+                                    <p> For further reference visit <a href="https://github.com/AKSarav/recover-s3">https://github.com/AKSarav/recover-s3</a></p>
                                 </div>
                             </div>
                         </div>
