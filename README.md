@@ -129,7 +129,7 @@ python recover-s3-files.py --bucket my-bucket --prefix my-prefix --region us-eas
 
 
 ```
-python recover-s3-files.py --bucket my-bucket --prefix my-prefix --region us-east-1 --dryrun
+python recover-s3-files.py --bucket my-bucket --prefix my-prefix --region us-east-1
 ```
 &nbsp;
 
